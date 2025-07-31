@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="music-player">
+        <div class="player-container">
+            <!-- 封面区域 -->
+            <div class="cover-section">
+                <div class="cover-wrapper">
+                    <img id="cover" src="https://via.placeholder.com/300x300/4f46e5/ffffff?text=音乐" alt="专辑封面">
+                    <div class="cover-overlay">
+                        <i class="fas fa-music"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 歌曲信息 -->
+            <div class="song-info">
+                <h2 id="song-title">选择音乐开始播放</h2>
+                <p id="artist-name">未知艺术家</p>
+            </div>
+
+            <!-- 播放控制 -->
+            <div class="controls">
+                <button id="prev-btn" class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="play-btn" class="control-btn play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next-btn" class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+
+            <!-- 进度条 -->
+            <div class="progress-section">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress-track">
+                        <div id="progress" class="progress-fill"></div>
+                        <div id="progress-handle" class="progress-handle"></div>
+                    </div>
+                </div>
+                <span id="total-time">0:00</span>
+            </div>
+
+            <!-- 音量控制 -->
+            <div class="volume-section">
+                <i class="fas fa-volume-down"></i>
+                <div class="volume-slider">
+                    <input type="range" id="volume" min="0" max="100" value="70">
+                </div>
+                <i class="fas fa-volume-up"></i>
+            </div>
+
+            <!-- 播放列表 -->
+            <div class="playlist-section">
+                <h3>播放列表</h3>
+                <div id="playlist" class="playlist">
+                    <div class="drop-zone" id="drop-zone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>拖拽音频文件到此处或点击选择</p>
+                        <input type="file" id="file-input" accept="audio/*" multiple hidden>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
